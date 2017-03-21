@@ -1,0 +1,15 @@
+## Puppet
+* text eol=lf
+*.rb text eol=lf
+*.pp text eol=lf
+*.erb text eol=lf
+*.sh text eol=lf
+*.json text eol=lf
+*.md text eol=crlf
+*.bat test eol=crlf
+
+# Binary 
+*.tar.gz binary
+*.tgz binary
+
+
