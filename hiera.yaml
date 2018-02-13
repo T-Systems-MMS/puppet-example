@@ -1,0 +1,17 @@
+---
+version: 5
+defaults:
+  datadir: hieradata
+hierarchy:
+  - name: "Secret data: per-node, per-datacenter, common fuer etc"
+    lookup_key: eyaml_lookup_key # eyaml backend
+    paths:
+      - "certname/%{::trusted.certname}.yaml"
+      - "cluster/%{::facts.cluster}.yaml"
+      - "role/%{::facts.role}.yaml"
+      - "topic/%{::facts.topic}.yaml"
+      - "location/%{::facts.location}.yaml"
+      - "common.yaml"
+    options:
+      pkcs7_private_key: /etc/puppetlabs/puppet/keys/private_key.pkcs7.pem
+      pkcs7_public_key: /etc/puppetlabs/puppet/keys/public_key.pkcs7.pem
